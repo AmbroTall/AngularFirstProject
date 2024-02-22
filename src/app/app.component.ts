@@ -6,8 +6,18 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'learningAngular';
+  newMember = '';
+  teamMembers: string[] = []
+
+  addInput(member : string){
+    this.newMember = member
+  }
+
+  addMember(){
+    this.teamMembers.push(this.newMember)
+    console.log(this.teamMembers)
+  }
 }
