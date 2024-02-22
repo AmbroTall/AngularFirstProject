@@ -1,0 +1,61 @@
+.main_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 3px solid #ccc;
+    padding: 10px 20px;
+}
+
+.list_container{
+    border: 2px solid #ccc;
+    padding: 10px 20px;
+}
+
+.list_container ul{
+    list-style: none;
+    padding: 0;
+}
+
+.list_container ul li{
+    margin: 0;
+    padding-bottom: 3px;
+}
+
+.input_container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input_container button{
+    color: #fff;
+    background-color: blue;
+    border: none;
+    outline: none;
+}
+
+
+.generate_container{
+    display: flex;
+}
+
+.generate_container input{
+    flex: 1;
+}
+
+.generate_container button{
+    flex: 1;
+    color: #fff;
+    background-color: green;
+    padding: 3px;
+    border: none;
+    outline: none;
+}
