@@ -1,23 +1,30 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  newMember = '';
-  teamMembers: string[] = []
+  newMember = ''
+  errorMsg = ''
+  members: string[] = []
 
-  addInput(member : string){
+  onInput(member : string){
     this.newMember = member
   }
 
-  addMember(){
-    this.teamMembers.push(this.newMember)
-    console.log(this.teamMembers)
+  onClick(){
+    if(this.newMember){
+      this.members.push(this.newMember)
+      this.errorMsg = ''
+      this.newMember = ''
+    }else{
+      this.errorMsg = "Team name Can't be blank"
+    }
   }
 }

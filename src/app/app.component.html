@@ -1,20 +1,17 @@
 <div class="main_container">
   <div class="container">
     <h1 class="title">Team Generator</h1>
-    <div class="list_container">
-      <ul>
-        <li>Element One</li>
-        <li>Element Two</li>
-        <li>Element Three</li>
-      </ul>
-    </div>
+    <ul class="list_container">
+      <li *ngFor="let member of members">{{member}}</li>
+    </ul>
     <div class="input_container">
-      <input #newMemberInput type="text" placeholder="Enter List" (input)="addInput(newMemberInput.value)"/>
-      <button (click)="addMember()">Add</button>
+      <input #newMemberInput type="text" placeholder="Enter List" (input)="onInput(newMemberInput.value)" [value]="newMember"/>
+      <button (click)="onClick()">Add</button>
     </div>
     <div class="generate_container">
       <input type="text" placeholder="# of teams"/>
       <button>Generate</button>
     </div>
+    <p *ngIf="errorMsg" class="error-msg">{{errorMsg}}</p>
   </div>
 </div>
